@@ -1,0 +1,72 @@
+<?php 
+
+    if(isset($_POST['submit'])){
+        include_once('config.php'); 
+        
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $setor = $_POST['setor'];
+        $tipo_colaborador = $_POST['tipo_colaborador'];
+        $salario = $_POST['salario']; 
+
+        $envio = mysqli_query($con, "INSERT INTO colaboradores (id, nome, email, telefone, setor, tipo_colaborador, salario) VALUES( '$id', '$nome', '$email', '$telefone', '$setor', '$tipo_colaborador', '$salario')"); 
+        if(!$envio){
+            echo('Dados não Enviados');
+        } else {
+            echo('Dados Enviados');
+        }
+    } 
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/colaboradores.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="container_formulario">
+        <div class="titulo" id="titulo">
+            <h1>Register</h1>
+        </div>
+        <div class="formulario" id="formulario">
+            <form action="" method="post">
+                <label for="nome" class="label">Id: </label>
+                <input type="text" class="input" id="id" name="id">
+                
+                <label for="nome" class="label">Nome: </label>
+                <input type="text" class="input" id="nome" name="nome">
+                
+                <label for="email" class="label">Email: </label>
+                <input type="text" class="input" id="email" name="email">
+                
+                <label for="nome" class="label">Telefone: </label>
+                <input type="text" class="input" id="telefone" name="telefone">
+                
+                <label for="nome" class="label">Setor: </label>
+                <input type="text" class="input" id="setor" name="setor">
+                
+                <label for="nome" class="label">Tipo Colaborador: </label>
+                <input type="text" class="input" id="tipo_colaborador" name="tipo_colaborador">
+                
+                <label for="nome" class="label">Salario: </label>
+                <input type="text" class="input" id="salario" name="salario">
+
+            </form>
+            <div class="btn"><input type="submit" class="input_btn" name="submit"></div>
+        </div>
+
+        </form>
+    </section>
+</body>
+
+</html>
