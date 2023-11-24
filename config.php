@@ -6,8 +6,8 @@
     $dbname = 'formulario'; 
     
     $con = mysqli_connect($host, $user, $password, $dbname);
-        // if(!$con){
-        //     echo('Falha ao conectar ');
+        //  if(!$con){
+        //      echo('Falha ao conectar ');
         // } echo('Conectado com Sucesso');
 
 ?>
